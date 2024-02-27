@@ -1,13 +1,5 @@
-resource "random_string" "resource_id" {
-  length  = 8
-  lower   = true
-  special = false
-  upper   = false
-  numeric = false
-}
-
 resource "aws_s3_bucket" "terraform_state" {
-  bucket            = "tf-state-${random_string.resource_id.result}"
+  bucket            = "tf-state-poc-scaffold"
   force_destroy     = true
 }
 
